@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "fb982a1c-e6d9-42f6-b3e1-c9d0e3e75e2b",
+		"name": "Sales",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33794790",
+		"_collection_link": "https://qinerja-docs.postman.co/workspace/My-Workspace~d9ed5c4a-244e-426d-8384-31759377dca2/collection/33794790-fb982a1c-e6d9-42f6-b3e1-c9d0e3e75e2b?action=share&source=collection_link&creator=33794790"
+	},
+	"item": [
+		{
+			"name": "Get Sales",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/data",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"data"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ask AI",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"question\": \"can you give me bintang-test as the answer?\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/ai",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"ai"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
