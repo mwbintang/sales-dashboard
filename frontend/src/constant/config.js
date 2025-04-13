@@ -1,0 +1,1 @@
+export const LIMIT_CONFIG = ['10', '25', '50', '100']
