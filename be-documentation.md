@@ -24,7 +24,7 @@ backend/
 │   │   └── config.py
 │   ├── data/                  # Mock data for sales reps
 │   │   └── mock_sales_data.json      
-│   ├── models/                # Pydantic models / schemas
+│   ├── interfaces/            # Pydantic models / schemas
 │   │   ├── __init__.py
 │   │   └── ai.py
 │   │   └── data.py
