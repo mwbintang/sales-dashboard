@@ -2,3 +2,17 @@
 /* @tailwind base;
 @tailwind components; */
 /* @tailwind utilities; */
+body {
+    background-color: #d8e4e4;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.548); /* more white, still transparent */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  

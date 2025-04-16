@@ -3,8 +3,7 @@ import React from "react";
 export const Cell = ({
   children,
   width,
-  onClick,
-  isPromo
+  onClick
 }) => {
   return (
     <td
@@ -14,7 +13,7 @@ export const Cell = ({
       }}
       onClick={onClick}
     >
-      {children ? children : isPromo ? "" : "-"}
+      {children || "-"}
     </td>
   )
 }

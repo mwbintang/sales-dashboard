@@ -7,7 +7,7 @@ from ..core import raise_custom_error
 router = APIRouter()
 
 
-@router.get("/", response_model=DataResponse)
+@router.get("/data", response_model=DataResponse)
 def get_sales():
     """
     Get all sales representatives data.

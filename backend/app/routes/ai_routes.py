@@ -10,7 +10,7 @@ router = APIRouter()
 
 
 @router.post(
-    "/", response_model=AiResponse, responses={422: {"model": ErrorResponseModel}}
+    "/ai", response_model=AiResponse, responses={422: {"model": ErrorResponseModel}}
 )
 async def ask_ai_routes(payload: Question):
     """
