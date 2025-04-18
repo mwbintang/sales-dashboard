@@ -47,7 +47,7 @@ backend/
 ### 1. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+make install-backend
 ```
 
 ### 2. Create .env file
@@ -108,48 +108,7 @@ Returns structured answer from AI.
 While the current implementation serves its purpose, there are several ways to enhance the project for better performance, scalability, and user experience. Below are some suggestions for potential improvements:
 
 ---
-
-## 1. **Error Handling and Response Standardization**
-
-**Current State:**  
-- While some basic error handling is implemented, the project could benefit from more detailed and standardized error responses.
-
-**Improvement:**  
-- Introduce custom error handling with standardized responses for all endpoints. This could include defining error codes and error messages in a consistent format.
-- Example:
-  - HTTP 404 errors should return:
-    ```json
-    {
-      "error": "Not Found",
-      "message": "The resource you requested could not be found."
-    }
-    ```
-- Consider using **FastAPI's exception handling** to create custom exceptions and handle them globally with custom error messages.
-
----
-
-## 2. **Validation with Pydantic Models**
-
-**Current State:**  
-- The API's input validation is somewhat minimal.
-
-**Improvement:**  
-- Use **Pydantic models** more extensively to validate incoming requests. This ensures that only valid data is processed.
-  - Example:  
-    ```python
-    from pydantic import BaseModel
-    
-    class SalesRep(BaseModel):
-        name: str
-        region: str
-        role: str
-        skills: list[str]
-    ```
-- This provides an additional layer of security and ensures that invalid data doesn't affect the API’s functionality.
-
----
-
-## 3. **Logging and Monitoring**
+## 1. **Logging and Monitoring**
 
 **Current State:**  
 - The current implementation does not include any logging mechanisms.
@@ -172,7 +131,7 @@ While the current implementation serves its purpose, there are several ways to e
 
 ---
 
-## 4. **Caching for Performance Optimization**
+## 2. **Caching for Performance Optimization**
 
 **Current State:**  
 - The application does not seem to leverage caching.
@@ -183,7 +142,7 @@ While the current implementation serves its purpose, there are several ways to e
 
 ---
 
-## 5. **Authentication and Authorization**
+## 3. **Authentication and Authorization**
 
 **Current State:**  
 - The API does not yet implement any form of authentication or authorization.
