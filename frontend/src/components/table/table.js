@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Cell } from "./cell";
-import { ChevronDown, ChevronUp } from "lucide-react";
-import { FaEdit } from "react-icons/fa";
-// import { currency } from "@/src/utils/currencyParse"; // assuming you need this
+import { ChevronDown, ChevronUp } from "lucide-react";;
 
 export const Table = ({
   headerItems,
   list,
-  // onClickRow,
   isLoading = false,
   emptyMessage,
-  emptyIcon,
-  type,
 }) => {
   const [expandedRows, setExpandedRows] = useState({});
 
@@ -29,7 +24,7 @@ export const Table = ({
         <table className="w-full">
           <thead>
             <tr className="text-left text-nowrap text-davy-grey border-b border-gray-300 text-sm leading-[21px]">
-              {headerItems.map((item, index) => (
+              {headerItems.map((item) => (
                 <th
                   key={item.key}
                   className={`font-medium py-4 px-4 ${item.headerClassName || ""}`}
@@ -49,11 +44,10 @@ export const Table = ({
                 </td>
               </tr>
             ) : list?.length > 0 ? (
-              list.map((data, index) => (
+              list.map((data) => (
                 <React.Fragment key={data.id}>
                   <tr
                     className="cursor-pointer border-b border-gray-300 hover:bg-black-four-percent"
-                  // onClick={() => onClickRow?.(data.id)}
                   >
                     {headerItems.map((item, i) => (
                       <Cell key={i} width={item?.width}>
@@ -123,10 +117,13 @@ export const Table = ({
                 </React.Fragment>
               ))
             ) : (
-              <div className="h-[448px] flex flex-row justify-center items-center text-center space-y-4 space-x-4">
-                <Image alt="empty" src="/svg/searchEmptyIcon.svg" width={120} height={120} />
-                <div className="text-black text-xl font-semibold">{emptyMessage}</div>
-              </div>
+              <td colSpan={6} className="px-0 bg-[#F5F5F5]">
+                <div className="h-[448px] flex flex-row justify-center items-center text-center space-y-4 space-x-4">
+                  <Image alt="empty" src="/svg/searchEmptyIcon.svg" width={120} height={120} />
+                  <div className="text-black text-xl font-semibold">{emptyMessage}</div>
+                </div>
+              </td>
+
             )}
           </tbody>
         </table>

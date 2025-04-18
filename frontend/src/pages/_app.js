@@ -1,5 +1,15 @@
-import '../styles/global.css' // ✅ Import Tailwind or global styles here
+import { Layout } from "../components/layout/layout";
+import '../styles/global.css'
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-export default function App({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function MyApp({ Component, pageProps }) {
+  return (
+    <Layout>
+      <Component {...pageProps} />
+      <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
+    </Layout>
+  );
 }
+
+export default MyApp;
